@@ -1,0 +1,4 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Brain, Home, ArrowLeft } from 'lucide-react';
+export default function NotFound(){return(<div className="min-h-screen flex items-center justify-center px-4"><div className="text-center animate-scale-in"><div className="w-20 h-20 bg-gradient-to-br from-calm-400/20 to-zen-400/20 rounded-3xl flex items-center justify-center mx-auto mb-6"><Brain className="w-10 h-10 text-calm-400"/></div><h1 className="text-6xl font-black gradient-text mb-4">404</h1><p className="text-xl text-white font-semibold mb-2">Page Not Found</p><p className="text-surface-400 mb-8">This page doesn't exist.</p><div className="flex items-center justify-center gap-3"><button onClick={()=>window.history.back()} className="btn-secondary flex items-center gap-2"><ArrowLeft className="w-4 h-4"/>Back</button><Link to="/" className="btn-primary flex items-center gap-2"><Home className="w-4 h-4"/>Home</Link></div></div></div>);}

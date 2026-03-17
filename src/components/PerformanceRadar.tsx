@@ -1,0 +1,4 @@
+import React from 'react';
+import { ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
+interface Props{energy:number;focus:number;stress:number;sleep:number;calmScore:number;}
+export default function PerformanceRadar({energy,focus,stress,sleep,calmScore}:Props){const data=[{metric:'Energy',value:energy},{metric:'Focus',value:focus},{metric:'Calm',value:calmScore},{metric:'Sleep',value:Math.min(sleep,10)},{metric:'Recovery',value:Math.max(0,10-stress)}];return(<ResponsiveContainer width="100%" height={280}><RadarChart data={data} cx="50%" cy="50%" outerRadius="75%"><PolarGrid stroke="rgba(255,255,255,0.08)"/><PolarAngleAxis dataKey="metric" tick={{fill:'#94a3b8',fontSize:12}}/><PolarRadiusAxis angle={90} domain={[0,10]} tick={false} axisLine={false}/><Radar name="Performance" dataKey="value" stroke="#0c93e7" fill="#0c93e7" fillOpacity={0.15} strokeWidth={2}/></RadarChart></ResponsiveContainer>);}

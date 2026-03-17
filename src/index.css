@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  * { @apply border-surface-200; }
+  body { @apply bg-surface-950 text-white antialiased; font-family:'Inter',system-ui,sans-serif; }
+  ::-webkit-scrollbar { width:6px; }
+  ::-webkit-scrollbar-track { @apply bg-surface-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-surface-600 rounded-full; }
+}
+@layer components {
+  .glass { @apply bg-white/5 backdrop-blur-xl border border-white/10; }
+  .glass-hover { @apply hover:bg-white/10 hover:border-white/20 transition-all duration-300; }
+  .glass-card { @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6; }
+  .glass-card-hover { @apply glass-card hover:bg-white/10 hover:border-white/20 hover:shadow-lg hover:shadow-calm-500/5 transition-all duration-300; }
+  .gradient-text { @apply bg-clip-text text-transparent bg-gradient-to-r from-calm-400 via-zen-400 to-calm-300; }
+  .btn-primary { @apply px-6 py-3 bg-gradient-to-r from-calm-500 to-calm-600 hover:from-calm-400 hover:to-calm-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-calm-500/25 hover:shadow-calm-500/40 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-secondary { @apply px-6 py-3 glass glass-hover text-white font-semibold rounded-xl active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-danger { @apply px-6 py-3 bg-gradient-to-r from-danger-500 to-danger-600 hover:from-danger-400 hover:to-danger-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-danger-500/25 active:scale-95; }
+  .input-field { @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-surface-400 focus:outline-none focus:ring-2 focus:ring-calm-500/50 focus:border-calm-500/50 transition-all duration-300; }
+  .slider-custom { @apply w-full h-2 rounded-full appearance-none cursor-pointer bg-surface-700; }
+  .page-container { @apply min-h-screen pt-20 pb-12 px-4 sm:px-6 lg:px-8; }
+  .section-title { @apply text-2xl sm:text-3xl font-bold text-white mb-2; }
+  .section-subtitle { @apply text-surface-400 text-lg mb-8; }
+}
+@layer utilities {
+  .mesh-gradient { background: radial-gradient(at 27% 37%,hsla(215,98%,61%,0.15) 0px,transparent 50%),radial-gradient(at 97% 21%,hsla(155,98%,40%,0.1) 0px,transparent 50%),radial-gradient(at 52% 99%,hsla(225,98%,61%,0.1) 0px,transparent 50%),radial-gradient(at 10% 29%,hsla(256,96%,67%,0.08) 0px,transparent 50%); }
+  .noise-bg { position:relative; }
+}
